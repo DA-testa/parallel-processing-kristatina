@@ -14,7 +14,7 @@ def parallel_processing(n, m, data):
         heapq.heappush(threads, (new_completion_time, thread_index))
         output.append((thread_index, completion_time))
 
-    return output
+    return output, time
 
 def main():
     # TODO: create input from keyboard
