@@ -8,13 +8,13 @@ def parallel_processing(n, m, data):
     heapq.heapify(threads)
     
     for i in range(m):
-        time = times[i]
+        time = data[i]
         completion_time, thread_index = heapq.heappop(threads)
         new_completion_time = completion_time + time
         heapq.heappush(threads, (new_completion_time, thread_index))
         output.append((thread_index, completion_time))
 
-    return output, time
+    return output
 
 def main():
     # TODO: create input from keyboard
@@ -23,7 +23,7 @@ def main():
     # n - thread count 
     # m - job count
     n, m = map(int, input().split())
-    times = list(map(int, input().split()))
+    data = list(map(int, input().split()))
     #n = 0
     #m = 0
 
