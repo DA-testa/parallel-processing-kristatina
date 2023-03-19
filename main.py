@@ -7,7 +7,7 @@ def parallel_processing(n, m, data):
     threads = [(0, i) for i in range(n)]
     heapq.heapify(threads)
     
-    for i in range data:
+    for i in data:
         time = data[i]
         completion_time, thread_index = heapq.heappop(threads)
         output.append((thread_index, completion_time))
